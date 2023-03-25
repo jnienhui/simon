@@ -13,15 +13,6 @@ const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 const client = new MongoClient(url);
 const scoreCollection = client.db('simon').collection('score');
 
-const score1 = {
-  position: 1,
-  name: 'Kapo',
-  score: 3,
-  date: '3/25/2023',
-};
-
-scoreCollection.insertOne(score1);
-
 function addScore(score) {
   scoreCollection.insertOne(score);
 }
